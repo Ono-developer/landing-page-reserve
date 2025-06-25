@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人生を変える“ダイアモンド”をあなたのエネルギーから探し出す</title>
+    <style>
+        /* ---------- リセット ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        br.sp {
+            display: none;
+        }
+
+        /* ---------- 基本スタイル ---------- */
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacOSSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 警告バナー */
+        .warning-banner {
+            background: #FF6B35;
+            color: #fff;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.02)
+            }
+        }
+
+        /* ヘッダー */
+        .header {
+            position: relative;
+            background: linear-gradient(135deg, #1a2332 0%, #3760A6 100%);
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: sparkle 3s ease-in-out infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0.3
+            }
+
+            50% {
+                opacity: 0.8
+            }
+        }
+
+        .main-headline {
+            font-size: clamp(24px, 5vw, 42px);
+            font-weight: 900;
+            line-height: 1.2;
+            margin: 30px 0 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .sub-headline {
+            font-size: clamp(16px, 3vw, 22px);
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #FFE066;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ビデオ */
+        .video-container {
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .video-container video {
+            width: 100%;
+            max-height: 400px;
+            border-radius: 10px;
+        }
+
+        .video-caption {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #FFE066;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3760A6;
+            font-size: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* セクションタイトル */
+        .section-title {
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #3760A6;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #3760A6;
+            margin: 15px auto;
+        }
+
+        /* 問題提起セクション */
+        .problem-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .problem-list {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fff5f5;
+            border-left: 5px solid #FF6B35;
+            border-radius: 8px;
+        }
+
+        .problem-icon {
+            font-size: 24px;
+            color: #FF6B35;
+            margin-right: 15px;
+        }
+
+        .problem-text {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* 解決策セクション */
+        .solution-section {
+            background: #fff;
+            padding: 60px 0;
+        }
+
+        .steps-container {
+            display: grid;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .step {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            border: 3px solid #3760A6;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            background: #3760A6;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .step-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3760A6;
+            margin: 10px 0 20px;
+        }
+
+        .step-video {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #2C3E50, #3760A6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform .3s ease;
+        }
+
+        .step-video:hover {
+            transform: scale(1.02);
+        }
+
+        .step-description {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* 信頼性セクション */
+        .credibility-section {
+            background: #3760A6;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .credibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .credibility-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .credibility-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #FFE066;
+            margin-bottom: 10px;
+        }
+
+        .credibility-text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* オーナーストーリー */
+        .story-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .story-content {
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-text {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .story-highlight {
+            background: linear-gradient(135deg, #FFE066, #FF6B35);
+            color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* 商品紹介セクション */
+        .products-section {
+            background: #fff;
+            padding: 60px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all .3s ease;
+        }
+
+        .product-card:hover {
+            border-color: #3760A6;
+            transform: translateY(-5px);
+        }
+
+        .product-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3760A6;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* お客様の声セクション */
+        .testimonials-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .testimonial {
+            position: relative;
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 80px;
+            color: #3760A6;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: bold;
+            color: #3760A6;
+        }
+
+        /* CTAセクション */
+        .cta-section {
+            background: linear-gradient(135deg, #3760A6 0%, #1a2332 100%);
+            color: #fff;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-headline {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .cta-subheadline {
+            font-size: clamp(18px, 3vw, 24px);
+            margin-bottom: 40px;
+            color: #FFE066;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B35, #FFE066);
+            color: #333;
+            text-decoration: none;
+            padding: 25px 50px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px;
+            transition: all .3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .guarantee-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        /* FAQセクション */
+        .faq-section {
+            background: #fff;
+            padding: 60px 20px;
+        }
+
+        .faq-section .section-title {
+            font-size: 32px;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            background: #3760A6;
+            color: #fff;
+            padding: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            background: #f8f9fa;
+            padding: 0 20px;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height .5s ease, opacity .3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding: 20px;
+            opacity: 1;
+        }
+
+        /* フッター */
+        .footer {
+            background: #1a2332;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ========= レスポンシブ ========= */
+        /* タブレット幅以下 */
+        @media(max-width:1024px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .warning-banner {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .main-headline {
+                font-size: 32px;
+            }
+
+            .sub-headline {
+                font-size: 18px;
+            }
+
+            .video-container video {
+                max-height: 300px;
+            }
+
+            .play-button {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .problem-list {
+                padding: 30px;
+            }
+
+            .problem-icon {
+                font-size: 20px;
+            }
+
+            .problem-text {
+                font-size: 14px;
+            }
+
+            .steps-container {
+                gap: 30px;
+            }
+
+            .step {
+                padding: 30px;
+            }
+
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                left: 30px;
+                top: -18px;
+            }
+
+            .step-title {
+                font-size: 20px;
+            }
+
+            .step-video {
+                height: 180px;
+            }
+
+            .step-description {
+                font-size: 14px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .product-name {
+                font-size: 20px;
+            }
+
+            .product-description {
+                font-size: 14px;
+            }
+
+            .testimonial {
+                padding: 30px;
+            }
+
+            .testimonial-text {
+                font-size: 16px;
+            }
+
+            .cta-headline {
+                font-size: 32px;
+            }
+
+            .cta-subheadline {
+                font-size: 20px;
+            }
+
+            .cta-button {
+                padding: 20px 40px;
+                font-size: 18px;
+            }
+
+            .faq-answer {
+                max-height: 180px;
+                padding: 15px;
+            }
+        }
+
+        /* スマホ幅以下 */
+        @media(max-width:768px) {
+            .header {
+                padding: 30px 0;
+            }
+
+            .main-headline {
+                font-size: 24px;
+            }
+
+            .sub-headline {
+                font-size: 16px;
+            }
+
+            .video-container video {
+                max-height: 250px;
+            }
+
+            .warning-banner {
+                font-size: 12px;
+            }
+
+            .problem-section,
+            .solution-section {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .problem-list {
+                padding: 20px;
+            }
+
+            .problem-text {
+                font-size: 13px;
+            }
+
+            .steps-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .credibility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-content {
+                padding: 30px;
+            }
+
+            .story-text {
+                font-size: 16px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-text {
+                font-size: 15px;
+            }
+
+            .cta-button {
+                padding: 18px 36px;
+                font-size: 16px;
+            }
+
+            .footer-content {
+                font-size: 12px;
+            }
+
+            .faq-question {
+                font-size: 16px !important;
+                padding: 15px !important;
+            }
+
+            .faq-answer {
+                display: none !important;
+                /* 非表示 */
+                max-height: none !important;
+                /* 高さ制限をクリア */
+                padding: 15px !important;
+                /* パディングもリセット */
+                opacity: 1;
+                /* 不透明度は無視 */
+                transition: none !important;
+                /* トランジションも無効に */
+                font-size: 14px !important;
+                line-height: 1.6 !important;
+            }
+
+            .faq-item.open .faq-answer {
+                display: block !important;
+                /* 開いたら表示 */
+                padding: 20px;
+                /* パディングを復活 */
+            }
+        }
+
+        /* 小型スマホ幅以下 */
+        @media(max-width:480px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .main-headline {
+                font-size: 20px;
+            }
+
+            .sub-headline {
+                font-size: 14px;
+            }
+
+            .warning-banner {
+                font-size: 11px;
+            }
+
+            .video-caption {
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .problem-text {
+                font-size: 12px;
+            }
+
+            .step-title {
+                font-size: 18px;
+            }
+
+            .step-description {
+                font-size: 12px;
+            }
+
+            .credibility-number {
+                font-size: 36px;
+            }
+
+            .story-text {
+                font-size: 14px;
+            }
+
+            .product-name {
+                font-size: 16px;
+            }
+
+            .product-description {
+                font-size: 12px;
+            }
+
+            .testimonial-text {
+                font-size: 14px;
+            }
+
+            .cta-headline {
+                font-size: 28px;
+            }
+
+            .cta-subheadline {
+                font-size: 18px;
+            }
+
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 14px;
+            }
+
+            .faq-question {
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            .faq-answer {
+                font-size: 14px;
+            }
+
+            br.sp {
+                display: block;
+                margin: 0.5em 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 警告バナー -->
+    <div class="warning-banner">
+        ⚠️ 注意：このページは48時間限定公開です。明日の夜には削除されます。
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <h1 class="main-headline">
+                人生を変える“ダイアモンド”を<br>あなたのエネルギーから探し出す
+            </h1>
+            <p class="sub-headline">
+                科学的な測定で証明された「アルカダイアモンド」が<br>あなたの人生を劇的に変える理由とは...
+            </p>
+            <div class="video-container">
+                <video controls>
+                    <source src="/video/Seminar_1.mp4" type="video/mp4">
+                    お使いのブラウザは動画タグに対応していません。
+                </video>
+                <p class="video-caption">
+                    代表・迫恭一郎が語る衝撃の誕生秘話（90秒）<br>
+                    ※音声が出ますのでご注意ください
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 問題提起セクション -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">
+                もしあなたが以下のような<br class="sp">悩みを抱えているなら…
+            </h2>
+            <div class="problem-list">
+                <div class="problem-item">
+                    <div class="problem-icon">❌</div>
+                    <div class="problem-text">
+                        <strong>高級なダイヤを身につけても、なぜか心が満たされない</strong><br>
+                        美しさだけでは、日常のストレスや不安は解消されませんよね？
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">❌</div>
+                    <div class="problem-text">
+                        <strong>「エネルギー」「波動」という言葉は聞くけれど、実感できない</strong><br>
+                        抽象的すぎて、本当に効果があるのか疑問に思っていませんか？
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">❌</div>
+                    <div class="problem-text">
+                        <strong>本当に自分に合う「一石」を見つける方法がわからない</strong><br>
+                        何十万円も投資するのに、選び方がわからず不安になりませんか？
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">❌</div>
+                    <div class="problem-text">
+                        <strong>成功者たちが持つ「何か」を自分も手に入れたい</strong><br>
+                        でも、その「何か」が一体何なのかがわからない…
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:40px;font-size:18px;">
+                <strong>もしこれらの悩みに一つでも当てはまるなら、<br>
+                    この先を必ず読み進めてください。</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- 解決策セクション -->
+    <section class="solution-section">
+        <div class="container">
+            <h2 class="section-title">
+                「EAV測定」であなただけの<br>運命のダイアモンドを見つける
+            </h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">EAV測定でからだや心の状態を可視化</h3>
+                    <div class="step-video" onclick="playVideo('step1')">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <p class="step-description">
+                        微弱電流を使用した最新の測定技術で、あなたの体内エネルギーの状態を数値化。<br>
+                        感覚ではなく、目に見える形であなたの「エネルギーバランス」を正確に測定します。
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">千種類以上のダイアモンドから<br class="sp">最適なダイアをご提案</h3>
+                    <div class="step-video" onclick="playVideo('step2')">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <p class="step-description">
+                        測定結果に基づき、長年の修行を積んだセラピストが膨大なダイアモンドの中から<br>
+                        あなたのからだに最も共鳴するダイアモンドをお探しします。
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">1ミクロン精度の「てずり」研磨</h3>
+                    <div class="step-video" onclick="playVideo('step3')">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <p class="step-description">
+                        NHKでも特集されたマイクロ単位の研磨技術で、エネルギーを最大化するカットに再研磨。<br>
+                        見た目の美しさだけでなく、「機能するダイアモンド」として完璧に仕上げます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 信頼性セクション -->
+    <section class="credibility-section">
+        <div class="container">
+            <h2 class="section-title" style="color:#fff;">メディアも認めた確かな実績</h2>
+            <div class="credibility-grid">
+                <div class="credibility-item">
+                    <span class="credibility-number">60</span>
+                    <div class="credibility-text">年以上の販売実績</div>
+                </div>
+                <div class="credibility-item">
+                    <span class="credibility-number">30,000</span>
+                    <div class="credibility-text">名近い体験実績</div>
+                </div>
+                <div class="credibility-item">
+                    <span class="credibility-number">2009</span>
+                    <div class="credibility-text">年NHK特集放送</div>
+                </div>
+                <div class="credibility-item">
+                    <span class="credibility-number">7</span>
+                    <div class="credibility-text">種類の独自カット開発</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- オーナーストーリー -->
+    <section class="story-section">
+        <div class="container">
+            <h2 class="section-title">ダイアモンドで地球を護る</h2>
+            <div class="story-content">
+                <p class="story-text">
+                    今や医療関係者、経営者、学者など多くの方々のご指示をいただくようになったアルカダイアモンド。
+                    これまでもダイアモンドの常識を超えたさまざまな奇跡を起こしてきましたが、その誕生には
+                </p>
+                <div class="story-highlight">「人の役に立てるダイアモンドを作りたい」</div>
+                <p class="story-text">
+                    というもともと医者を目指していた創始者の想いがありました。
+                    お客さまからは、身につけるだけで癒やされる、エネルギッシュになる、自分自身が進化しているなど日々喜びの声をいただきます。
+                </p>
+                <p class="story-text">
+                    地球が生み、人が造形と輝きを磨いてきたダイアモンド。
+                    その輝きと愛のエネルギーを最大限に発揮するアルカダイアモンドを持つ人が日本の、そして世界の各地に存在したら、地球全体も元気で幸せになっていくと考えています。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品紹介 -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">7つのアルカカットとエネルギー特性</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3 class="product-name">SUN</h3>
+                    <p class="product-description">
+                        肉体を癒し外に輝きを放つ、<br>父のように力強い陽のエネルギー
+                    </p>
+                </div>
+                <div class="product-card">
+                    <h3 class="product-name">MOON</h3>
+                    <p class="product-description">
+                        心の内面を母のように温かく癒し、<br>優しく包む陰のエネルギー
+                    </p>
+                </div>
+                <div class="product-card">
+                    <h3 class="product-name">EARTH</h3>
+                    <p class="product-description">
+                        肉体・精神のバランスを高める<br>陰陽統合のエネルギー
+                    </p>
+                </div>
+                <div class="product-card">
+                    <h3 class="product-name">CosmoGate</h3>
+                    <p class="product-description">
+                        脳を活性化させると共に<br>高次元へ導く強いエネルギー
+                    </p>
+                </div>
+                <div class="product-card">
+                    <h3 class="product-name">BIRTH</h3>
+                    <p class="product-description">
+                        生まれ変わり輝きを増す<br>すべてを包み込む宇宙根源の光のエネルギー
+                    </p>
+                </div>
+                <div class="product-card">
+                    <h3 class="product-name">KAIROS</h3>
+                    <p class="product-description">
+                        最大の調和を表す三重三角形<br>中今に生き次元上昇を加速させる
+                    </p>
+                </div>
+                <div class="product-card">
+                    <h3 class="product-name">GAIA</h3>
+                    <p class="product-description">
+                        陰陽、善悪、表裏という二元論の世界から<br>5次元の新しい世界観へと移行するエネルギー
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:40px;font-size:18px;color:#555;">
+                ※最初にお好きなカットを選んで頂き、そのカットの中から<br class="sp">
+                あなたに合うダイアモンドをお探しいたします。<br>
+                ※SUN,MOON,EARTHは現在取り扱っておりません。
+            </div>
+        </div>
+    </section>
+
+    <!-- お客様の声 -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">実際に人生が変わった方々の声</h2>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    KAIROSを身につけてから、プレゼンでの緊張が嘘のように消えました。
+                    重要な商談でも冷静に判断でき、前年比125%の成績を達成。
+                    同僚からも「何が変わったんですか？」と驚かれています。
+                </p>
+                <div class="testimonial-author">
+                    - 高橋様（42歳・営業／北海道）
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    MOONを選んでから、家族との時間が本当に穏やかになりました。
+                    以前はイライラしがちでしたが、今は自然と笑顔でいられます。
+                    夫からも「最近すごく優しくなったね」と言われるんです。
+                </p>
+                <div class="testimonial-author">
+                    - 山本様（55歳・主婦／愛知県）
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    EARTHを手にしてから、仕事もプライベートも驚くほど安定しました。
+                    迷いがちだった性格が変わり、決断力が身についたんです。
+                    クライアントからの信頼も厚くなり、収入も30%アップしました。
+                </p>
+                <div class="testimonial-author">
+                    - 井上様（33歳・デザイナー／東京）
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section class="cta-section" id="cta-top">
+        <div class="container">
+            <h2 class="cta-headline">
+                今すぐ無料でEAV測定を体験し<br class="sp">あなたの運命のダイアモンドを<br class="sp">
+                発見してください
+            </h2>
+            <p class="cta-subheadline">
+                【特別限定】このページから予約の方に<br>
+                『からだという神様』(1,650円相当)を無料プレゼント
+            </p>
+            <a href="https://arkadiamond.com/taikenkai_salon/" class="cta-button"
+                onclick="scrollToReservation()">今すぐ無料体験を予約する</a>
+            <div class="guarantee-box">
+                <h3 style="color:#FFE066;margin-bottom:20px;font-size:24px;">🛡️ 完全ノーリスク保証</h3>
+                <p style="font-size:18px;line-height:1.6;">
+                    ✅ 測定・体験は完全無料<br>
+                    ✅ 購入の強制は一切なし<br>
+                    ✅ 予約キャンセル料なし
+                </p>
+            </div>
+            <p style="font-size:16px;margin-top:30px;opacity:0.8;">
+                ※先着30名様限定です。予約枠が埋まり次第、このページは削除されます。
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQセクション -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">よくある質問</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Q1. EAV測定は痛みがありますか？
+                </div>
+                <div class="faq-answer">
+                    A1. 完全に無痛です。微弱な電流を使用しますが、全く感じることはありません。<br>
+                    上記の動画でも実際の測定の様子をご確認いただけます。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Q2. 体験にはどのくらい時間がかかりますか？
+                </div>
+                <div class="faq-answer">
+                    A2. 60～120分程度です。お一人お一人にしっかりと時間をかけてピッタリのダイアモンドをお探しいたします。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Q3. 遠方からでも受けられますか？
+                </div>
+                <div class="faq-answer">
+                    A3. 福山本社サロンまたは全国の提携サロンで対応可能です。お住まいの地域に応じて最寄りのサロンをご案内いたします。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Q4. その場で購入する必要がありますか？
+                </div>
+                <div class="faq-answer">
+                    A4. 全くありません。体験後、ご自宅でゆっくりご検討いただけます。無理な勧誘は一切行いませんのでご安心ください。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Q5. 支払い方法を教えてください
+                </div>
+                <div class="faq-answer">
+                    A5. クレジットカード（VISA、Master、JCB）、ショッピングクレジット（JACCS）、銀行振込、現金支払いに対応しております。分割払いもご相談可能です。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最終CTA -->
+    <section class="cta-section" id="final-cta">
+        <div class="container">
+            <h2 class="cta-headline">
+                あなたの人生を変える<br>「真の輝き」を見つける体験を
+            </h2>
+            <p style="font-size:20px;margin-bottom:30px;line-height:1.6;">
+                迫氏が語った、あの言葉を思い出してください。<br>
+                <span style="color:#FFE066;font-weight:bold;">
+                    「このアルカダイアモンドが、あなたの人生を変える──」
+                </span>
+            </p>
+            <a href="https://arkadiamond.com/taikenkai_salon/" class="cta-button"
+                onclick="openReservationForm()">無料体験を今すぐ予約する</a>
+            <div style="margin-top:40px;padding:30px;background:rgba(255,255,255,0.1);border-radius:15px;">
+                <h3 style="color:#FFE066;margin-bottom:15px;">追伸（P.S.）</h3>
+                <p style="font-size:18px;line-height:1.7;">
+                    「いつか…」と思っている間にも、最適な一石は<br>
+                    他の誰かの手に渡ってしまうかもしれません。<br>
+                    まずはご自身の目で、心で、アルカダイアモンドをお確かめください。<br><br>
+                    <strong>このページは48時間で削除されます。</strong><br>
+                    今すぐ行動を起こしてください。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div style="border-bottom:1px solid rgba(255,255,255,0.3);padding-bottom:30px;margin-bottom:30px;">
+                    <strong>株式会社アルカダイアモンド</strong><br>
+                    〒721-0973 広島県福山市南蔵王町3丁目-8番-44号<br>
+                    代表取締役：迫 恭一郎<br>
+                    TEL：084-928-8333 ／ Email：info@arkadiamond.com<br>
+                    事業内容：ダイヤモンド研磨・販売
+                </div>
+                <div style="margin-bottom:20px;">
+                    <a href="#" style="color:#FFE066;margin:0 15px;">プライバシーポリシー</a>
+                    <a href="#" style="color:#FFE066;margin:0 15px;">特定商取引法に基づく表記</a>
+                    <a href="#" style="color:#FFE066;margin:0 15px;">お問い合わせ</a>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <span style="margin:0 10px;">📘 Facebook</span>
+                    <span style="margin:0 10px;">📷 Instagram</span>
+                    <span style="margin:0 10px;">📺 YouTube</span>
+                </div>
+                <small>©2025 Arka Diamond Co., Ltd. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 動画再生
+        function playVideo(type) {
+            const msgs = {
+                step1: 'EAV測定デモ動画を再生中…',
+                step2: '原石選別動画を再生中…',
+                step3: 'てずり研磨動画を再生中…'
+            };
+            alert(msgs[type] || '動画を再生中…');
+        }
+        // FAQ トグル
+        function toggleFAQ(el) {
+            const item = el.parentElement;
+            const openItem = document.querySelector('.faq-item.open');
+            if (openItem && openItem !== item) openItem.classList.remove('open');
+            item.classList.toggle('open');
+        }
+        // スムーススクロール
+        function scrollToReservation() {
+            document.getElementById('final-cta').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ページロード後アニメ
+        window.addEventListener('load', () => {
+            setTimeout(startCountdown, 2000);
+            document.querySelectorAll('.step,.product-card,.testimonial').forEach((el, i) => {
+                el.style.opacity = '0'; el.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    el.style.transition = 'all .6s ease';
+                    el.style.opacity = '1'; el.style.transform = 'translateY(0)';
+                }, i * 200 + 100);
+            });
+        });
+        // カウントダウン
+        function startCountdown() {
+            let t = 48 * 3600;
+            const d = document.createElement('div');
+            d.style.cssText = 'position:fixed;top:0;left:0;width:100%;background:#FF6B35;color:#fff;padding:10px;text-align:center;z-index:1000;font-weight:bold;font-size:14px';
+            document.body.appendChild(d);
+            (function u() {
+                const h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
+                d.textContent = `⏰ このページは ${h}時間${m}分${s}秒後に削除されます`;
+                if (t-->0) setTimeout(u, 1000);
+                else d.textContent = '🚨 このページは削除されました';
+            })();
+        }
+    </script>
+</body>
+
+</html>
