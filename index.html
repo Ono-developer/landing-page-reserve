@@ -191,6 +191,49 @@
             line-height: 1.6;
         }
 
+        .about-arka {
+            background: #fdfdfd;
+            /* 他のセクションと同じ明るい背景 */
+            padding: 60px 20px;
+            /* 上下の余白も統一 */
+        }
+
+        .about-arka .section-title {
+            color: #3760A6;
+            /* タイトルカラーを他セクションと合わせる */
+            margin-bottom: 30px;
+        }
+
+        .about-arka .about-text {
+            font-size: 18px;
+            /* テキストの読みやすさを維持 */
+            color: #333;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all .6s ease;
+        }
+
+        .about-arka .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            list-style: none;
+        }
+
+        .about-arka .feature-list li {
+            background: #fff;
+            list-style: none;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all .6s ease;
+        }
+
         /* 解決策セクション */
         .solution-section {
             background: #fff;
@@ -863,7 +906,7 @@
                 科学的な測定で証明された「アルカダイアモンド」が<br>あなたの人生を劇的に変える理由とは...
             </p>
             <div class="video-container">
-                <video autoplay muted playsinline loop preload="auto" controls preload="metadata" style="width:100%; height:auto;
+                <video autoplay muted playsinline controls preload="metadata" style="width:100%; height:auto;
                             border-radius:10px;">
                     <source src="video/seminar.mp4" type="video/mp4">
                     お使いのブラウザは動画タグに対応していません。
@@ -886,8 +929,8 @@
                 <div class="problem-item">
                     <div class="problem-icon">❌</div>
                     <div class="problem-text">
-                        <strong>“なんとなく疲れが取れない”を言語化できない</strong><br>
-                        感覚だけでは理由が分からず、解決策が見つからない
+                        <strong>“効果を謳う商品が多すぎてわからない</strong><br>
+                        〇〇が治る！〇〇に効く！とあるが本当かどうかわからない
                     </div>
                 </div>
                 <div class="problem-item">
@@ -916,6 +959,30 @@
                 <strong>もしこれらの悩みに一つでも当てはまるなら、<br>
                     この先を必ず読み進めてください。</strong>
             </div>
+        </div>
+    </section>
+
+    <section class="about-arka">
+        <div class="container">
+            <h2 class="section-title">アルカダイアモンドとは？</h2>
+            <p class="about-text">
+                アルカダイアモンドは、1919年提唱の“アイディアルカット”を超え、
+                日本人職人の“手擦り研磨”で入射光の100%反射を実現したブランドです。
+            </p>
+            <ul class="feature-list">
+                <li>
+                    <strong>完全反射の証明</strong><br>
+                    リフレクションスコープで全面均一な赤色に染まることで100％の反射を可視化
+                </li>
+                <li>
+                    <strong>手擦り研磨による高精度</strong><br>
+                    機械では到達できないあと数％の研磨を日本人の職人が追求
+                </li>
+                <li>
+                    <strong>聖幾何学デザイン</strong><br>
+                    自然界の調和を象徴する幾何学が光の美しさと医師のエネルギーを引き出します
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -1285,6 +1352,24 @@
                 else d.textContent = '🚨 このページは削除されました';
             })();
         }
+
+        window.addEventListener('load', () => {
+            setTimeout(startCountdown, 2000);
+
+            // ここに .about-arka の要素も含める
+            const animatedEls = document.querySelectorAll(
+                '.about-arka .about-text, .about-arka .feature-list li, .step, .product-card, .testimonial'
+            );
+
+            animatedEls.forEach((el, i) => {
+                // 遅延をずらして順にフェード＆スライドアップ
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                    el.style.transition = 'all .6s ease';
+                }, i * 200 + 100);
+            });
+        });
     </script>
 </body>
 
