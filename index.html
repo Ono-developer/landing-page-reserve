@@ -247,7 +247,16 @@
             transition: transform .3s ease;
         }
 
-        .step-video:hover {
+        .step-video {
+            position: relative;
+            height: 380px;
+            /* 元の高さ */
+            overflow: hidden;
+            /* はみ出しを隠す */
+            border-radius: 10px;
+        }
+
+        2. 動画タグに .step-video:hover {
             transform: scale(1.02);
         }
 
@@ -568,6 +577,15 @@
                 height: 180px;
             }
 
+            .step-video {
+                position: relative;
+                height: auto;
+                /* 元の高さ */
+                overflow: hidden;
+                /* はみ出しを隠す */
+                border-radius: 10px;
+            }
+
             .step-description {
                 font-size: 14px;
             }
@@ -608,6 +626,28 @@
             .faq-answer {
                 max-height: 180px;
                 padding: 15px;
+            }
+
+            .faq-answer {
+                display: none !important;
+                /* 非表示 */
+                max-height: none !important;
+                /* 高さ制限をクリア */
+                padding: 15px !important;
+                /* パディングもリセット */
+                opacity: 1;
+                /* 不透明度は無視 */
+                transition: none !important;
+                /* トランジションも無効に */
+                font-size: 14px !important;
+                line-height: 1.6 !important;
+            }
+
+            .faq-item.open .faq-answer {
+                display: block !important;
+                /* 開いたら表示 */
+                padding: 20px;
+                /* パディングを復活 */
             }
         }
 
@@ -679,6 +719,12 @@
             .cta-button {
                 padding: 18px 36px;
                 font-size: 16px;
+            }
+
+            .cta-headline {
+                font-size: clamp(20px, 4.6vw, 36px);
+                font-weight: 900;
+                margin-bottom: 30px;
             }
 
             .footer-content {
@@ -839,29 +885,29 @@
                 <div class="problem-item">
                     <div class="problem-icon">❌</div>
                     <div class="problem-text">
-                        <strong>高級なダイヤを身につけても、なぜか心が満たされない</strong><br>
-                        美しさだけでは、日常のストレスや不安は解消されませんよね？
+                        <strong>“なんとなく疲れが取れない”を言語化できない</strong><br>
+                        感覚だけでは理由が分からず、解決策が見つからない
                     </div>
                 </div>
                 <div class="problem-item">
                     <div class="problem-icon">❌</div>
                     <div class="problem-text">
-                        <strong>「エネルギー」「波動」という言葉は聞くけれど、実感できない</strong><br>
-                        抽象的すぎて、本当に効果があるのか疑問に思っていませんか？
+                        <strong>試行錯誤しても、“改善した”実感が曖昧</strong><br>
+                        効果が定量化されないため、続ける意味を感じにくい
                     </div>
                 </div>
                 <div class="problem-item">
                     <div class="problem-icon">❌</div>
                     <div class="problem-text">
-                        <strong>本当に自分に合う「一石」を見つける方法がわからない</strong><br>
-                        何十万円も投資するのに、選び方がわからず不安になりませんか？
+                        <strong>「エネルギーが～」と言われてもピンとこない</strong><br>
+                        見えない世界の話に抵抗があり、信頼できない
                     </div>
                 </div>
                 <div class="problem-item">
                     <div class="problem-icon">❌</div>
                     <div class="problem-text">
-                        <strong>成功者たちが持つ「何か」を自分も手に入れたい</strong><br>
-                        でも、その「何か」が一体何なのかがわからない…
+                        <strong>投資額に見合う根拠が欲しい</strong><br>
+                        数値データで裏付けられた確かな価値を求めている
                     </div>
                 </div>
             </div>
@@ -882,8 +928,13 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3 class="step-title">EAV測定でからだや心の状態を可視化</h3>
-                    <div class="step-video" onclick="playVideo('step1')">
-                        <div class="play-button">▶</div>
+                    <div class="step-video">
+                        <!-- 動画埋め込み -->
+                        <video autoplay muted playsinline loop preload="auto" controls preload="metadata" style="width:100%; height:auto;
+                            border-radius:10px;">
+                            <source src="video/eav_movie.mp4" type="video/mp4">
+                            お使いのブラウザは動画タグに対応していません。
+                        </video>
                     </div>
                     <p class="step-description">
                         微弱電流を使用した最新の測定技術で、あなたの体内エネルギーの状態を数値化。<br>
@@ -904,9 +955,11 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3 class="step-title">1ミクロン精度の「てずり」研磨</h3>
-                    <div class="step-video" onclick="playVideo('step3')">
-                        <div class="play-button">▶</div>
-                    </div>
+                    <video autoplay muted playsinline loop preload="auto" controls preload="metadata" style="width:100%; height:auto;
+                            border-radius:10px;">
+                        <source src="video/cut_movie.mp4" type="video/mp4">
+                        お使いのブラウザは動画タグに対応していません。
+                    </video>
                     <p class="step-description">
                         NHKでも特集されたマイクロ単位の研磨技術で、エネルギーを最大化するカットに再研磨。<br>
                         見た目の美しさだけでなく、「機能するダイアモンド」として完璧に仕上げます。
@@ -968,6 +1021,7 @@
         <div class="container">
             <h2 class="section-title">7つのアルカカットとエネルギー特性</h2>
             <div class="products-grid">
+                <!--  
                 <div class="product-card">
                     <h3 class="product-name">SUN</h3>
                     <p class="product-description">
@@ -986,6 +1040,7 @@
                         肉体・精神のバランスを高める<br>陰陽統合のエネルギー
                     </p>
                 </div>
+                -->
                 <div class="product-card">
                     <h3 class="product-name">CosmoGate</h3>
                     <p class="product-description">
@@ -1013,7 +1068,7 @@
             <div style="text-align:center;margin-top:40px;font-size:18px;color:#555;">
                 ※最初にお好きなカットを選んで頂き、そのカットの中から<br class="sp">
                 あなたに合うダイアモンドをお探しいたします。<br>
-                ※SUN,MOON,EARTHは現在取り扱っておりません。
+                <!--  ※SUN,MOON,EARTHは現在取り扱っておりません。-->
             </div>
         </div>
     </section>
@@ -1024,32 +1079,33 @@
             <h2 class="section-title">実際に人生が変わった方々の声</h2>
             <div class="testimonial">
                 <p class="testimonial-text">
-                    KAIROSを身につけてから、プレゼンでの緊張が嘘のように消えました。
-                    重要な商談でも冷静に判断でき、前年比125%の成績を達成。
-                    同僚からも「何が変わったんですか？」と驚かれています。
+                    アルカダイアモンドを身に着けてから、仕事が急に忙しくなりました。
+                    自分がしたいビジョンに向けて、協力してくれる人や情報がどんどん入ってきて、流れが早く大きくかわっていると実感しています。
+                    今まで目に見えないエネルギーに興味も関心もありませんでしたが、アルカダイアモンドのパワーは本当にすごいのでもっとたくさんの方に知って欲しいと思います。
                 </p>
                 <div class="testimonial-author">
-                    - 高橋様（42歳・営業／北海道）
+                    - I様 CosmoGate（54歳／愛媛県）
                 </div>
             </div>
             <div class="testimonial">
                 <p class="testimonial-text">
-                    MOONを選んでから、家族との時間が本当に穏やかになりました。
-                    以前はイライラしがちでしたが、今は自然と笑顔でいられます。
-                    夫からも「最近すごく優しくなったね」と言われるんです。
+                    バースを持ち始めて自分自身が柔らかくなった気がする。
+                    以前は切れやすく尖ってた。子供に対しても厳しく怒りっぽかった。
+                    昔から知ってる友人はらしくない、怒ることを諦めたの？と丸くなったのに違和感を感じてるようです。
+                    職場でも私が入ると空気がピリっとした雰囲気でしたが今はなくなった。楽になった。
                 </p>
                 <div class="testimonial-author">
-                    - 山本様（55歳・主婦／愛知県）
+                    - N様 BIRTH（46歳／東京都）
                 </div>
             </div>
             <div class="testimonial">
                 <p class="testimonial-text">
-                    EARTHを手にしてから、仕事もプライベートも驚くほど安定しました。
-                    迷いがちだった性格が変わり、決断力が身についたんです。
-                    クライアントからの信頼も厚くなり、収入も30%アップしました。
+                    会う人会う人が、優しい人。以前はそんなことはなかったようにみえました。
+                    なのになぜかこの頃、私に対して見ず知らずの方でも優しく対応してくれるのです。とまどうのと同時にやはりとても嬉しい変化です。
+                    自分としては特に変わった所はないのに、なぜかそうなる。良い方にそうなっていく。気持ちの揺れの幅も以前より小さくなった気がしています。
                 </p>
                 <div class="testimonial-author">
-                    - 井上様（33歳・デザイナー／東京）
+                    - S様 Kairos（55歳／北海道）
                 </div>
             </div>
         </div>
@@ -1059,8 +1115,7 @@
     <section class="cta-section" id="cta-top">
         <div class="container">
             <h2 class="cta-headline">
-                今すぐ無料でEAV測定を体験し<br class="sp">あなたの運命のダイアモンドを<br class="sp">
-                発見してください
+                今すぐ無料でEAV測定を体験し<br class="sp">あなたの運命のダイアモンドを発見してください
             </h2>
             <p class="cta-subheadline">
                 【特別限定】このページから予約の方に<br>
